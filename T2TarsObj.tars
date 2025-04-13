@@ -1,0 +1,24 @@
+
+module T2App
+{
+    struct T2TarsRequest 
+    {
+        1 optional int funcNo;
+        2 optional int seqNo;
+        3 optional map<string, string> data;
+    };
+
+    struct T2TarsResponse
+    {
+        1 optional int code;
+        2 optional string msg;
+        3 optional int seqNo;
+        4 optional vector<map<string, string>> data;
+    };
+
+    interface T2TarsObj
+    {
+        int invoke(T2TarsRequest req, out T2TarsResponse rsp);
+    };
+
+}; 
